@@ -1,0 +1,174 @@
+/*****************************************************
+                         COLORS                           
+*****************************************************/
+/*****************************************************
+                         RESETS                           
+*****************************************************/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background: url("../img/bg-intro-desktop.png") #ff7a7a;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 1080px;
+  margin: 0 15px;
+}
+
+/*****************************************************
+                         INTRODUCTION SECTION                           
+*****************************************************/
+.introduction {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.introduction h1 {
+  line-height: 1.1;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1.2rem;
+}
+
+.introduction p {
+  line-height: 1.8;
+  font-weight: 400;
+  max-width: 50ch;
+  margin-top: 0;
+  font-size: 0.90rem;
+  color: white;
+}
+
+/*****************************************************
+                         FORM SECTION                           
+*****************************************************/
+.registration h4 {
+  text-align: center;
+  color: white;
+  background: #6055a5;
+  padding: 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  box-shadow: 0 7px 0px 0 rgba(62, 60, 73, 0.25);
+}
+
+.registration h4 span {
+  font-weight: 300;
+}
+
+.registration form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.registration form > .form-error {
+  font-size: 0.7rem;
+  font-style: italic;
+  text-align: right;
+  color: red;
+}
+
+.registration form input {
+  padding: 1.2rem 1.5rem;
+  border-radius: 5px;
+  border-color: #b9b6d3;
+  border-width: 1.5px;
+  outline: none;
+  font-size: 0.9rem;
+  border-style: solid;
+  font-weight: 700;
+}
+
+.registration form input.errors {
+  color: red;
+  font-weight: 400;
+  border-color: red;
+  background-image: url("./../img/icon-error.svg");
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+}
+
+.registration form input:focus {
+  caret-color: #6d639c;
+}
+
+.registration form input.errors::placeholder {
+  color: red;
+  font-weight: 400;
+}
+
+.registration form input:focus {
+  border-color: rgba(62, 60, 73, 0.8);
+}
+
+.registration button {
+  background: #38cc8c;
+  color: white;
+  text-transform: uppercase;
+  display: block;
+  min-width: 100%;
+  letter-spacing: 1px;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 0;
+  box-shadow: 0 4px 0 0 #45b082;
+}
+
+.registration button:hover {
+  cursor: pointer;
+  background: #78e2b4;
+}
+
+.registration small a {
+  font-weight: 700;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+  padding: 3rem 2rem 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 7px 0px 0 rgba(62, 60, 73, 0.25);
+}
+
+.form small {
+  font-size: 0.65rem;
+  text-align: center;
+  display: block;
+  color: #b9b6d3;
+}
+
+.form small a {
+  color: #ff7a7a;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  #app {
+    grid-template-columns: 1fr;
+  }
+  .introduction {
+    text-align: center;
+  }
+  .registration {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Frontend Mentor | Intro component with sign up form</title>
+  </head>
+  <body>
+    <main id="app">
+      <section class="introduction">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </section>
+      <section class="registration">
+        <h4>Try it free 7 days <span>then $20/mo. thereafter</span></h4>
+        <div class="form">
+          <form v-on:submit.prevent="submitForm" action="#">
+            <input
+              :class="{ errors : form.name.errors }"
+              v-model="form.name.text"
+              placeholder="First Name"
+              type="text"
+              @input="resetStyle('name')"
+            />
+            <span class="form-error" v-if="form.name.errors"
+              >First Name cannot be empty</span
+            >
+            <input
+              :class="{ errors : form.surname.errors }"
+              v-model="form.surname.text"
+              placeholder="Last Name"
+              type="text"
+              @input="resetStyle('surname')"
+            />
+            <span class="form-error" v-if="form.surname.errors"
+              >Last Name cannot be empty</span
+            >
+            <input
+              :class="{ errors : form.email.errors }"
+              v-model="form.email.text"
+              placeholder="Email Address"
+              type="text"
+              @input="resetStyle('email')"
+            />
+            <span class="form-error" v-if="form.email.errors"
+              >Looks like this is not an email</span
+            >
+            <input
+              :class="{ errors : form.password.errors }"
+              v-model="form.password.text"
+              placeholder="Password"
+              type="text"
+              @input="resetStyle('password')"
+            />
+            <span class="form-error" v-if="form.password.errors"
+              >Password cannot be empty</span
+            >
+            <button type="submit">Claim your free trial</button>
+          </form>
+
+          <small>
+            By clicking the button, you are agreeing to our
+            <a href="">Terms and Services</a>
+          </small>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,195 @@
+/*****************************************************
+                         COLORS                           
+*****************************************************/
+
+$primaryRed: hsl(0, 100%, 74%);
+$primaryGreen: hsl(154, 59%, 51%);
+
+$accentBlue: hsl(248, 32%, 49%);
+
+$neutralDarkBlue: hsla(249, 10%, 26%, .8);
+$neutralDarkBlueShadow: hsla(249, 10%, 26%, 0.25);
+
+$neutralGrayishBlue: hsl(246, 25%, 77%);
+$buttonShadow: hsl(154, 44%, 48%);
+$buttonActive: hsl(154, 65%, 68%);
+$backgroundRed: hsla(0, 100%, 74%, 1);
+$bodyFontSize: 16px;
+
+$font: "Poppins", sans-serif;
+$caretColor: hsl(250, 22%, 50%);
+$radius: 0.5rem;
+
+/*****************************************************
+                         RESETS                           
+*****************************************************/
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0px;
+  font-family: $font;
+  font-size: $bodyFontSize;
+  background: url("../img/bg-intro-desktop.png") $backgroundRed;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 1080px;
+  margin: 0 15px;
+}
+
+/*****************************************************
+                         INTRODUCTION SECTION                           
+*****************************************************/
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+
+  h1 {
+    line-height: 1.1;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1.2rem;
+  }
+
+  p {
+    line-height: 1.8;
+    font-weight: 400;
+    max-width: 50ch;
+    margin-top: 0;
+    font-size: 0.90rem;
+    color: white;
+  }
+}
+
+/*****************************************************
+                         FORM SECTION                           
+*****************************************************/
+
+.registration {
+  h4 {
+    text-align: center;
+    color: white;
+    background: $accentBlue;
+    padding: 1rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: $radius;
+    box-shadow: 0 7px 0px 0 $neutralDarkBlueShadow;
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    > .form-error {
+      font-size: 0.7rem;
+      font-style: italic;
+      text-align: right;
+      color: red;
+    }
+    input {
+      padding: 1.2rem 1.5rem;
+      border-radius: 5px;
+      border-color: $neutralGrayishBlue;
+      border-width: 1.5px;
+      outline: none;
+      font-size: 0.9rem;
+      border-style: solid;
+      font-weight: 700;
+      &.errors {
+        color: red;
+        font-weight: 400;
+        border-color: red;
+        background-image: url("./../img/icon-error.svg");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+      }
+      &:focus {
+        caret-color: $caretColor;
+      }
+      &.errors::placeholder {
+        color: red;
+        font-weight: 400;
+      }
+    }
+
+    input:focus {
+      border-color: $neutralDarkBlue;
+    }
+  }
+
+  button {
+    background: $primaryGreen;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+    min-width: 100%;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border: none;
+    border-radius: $radius;
+    padding: 1rem 0;
+    box-shadow: 0 4px 0 0 $buttonShadow;
+
+    &:hover {
+      cursor: pointer;
+      background: $buttonActive;
+    }
+  }
+
+  small a {
+    font-weight: 700;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+  padding: 3rem 2rem 3rem;
+  border-radius: $radius;
+  box-shadow: 0 7px 0px 0 $neutralDarkBlueShadow;
+
+  small {
+    font-size: 0.65rem;
+    text-align: center;
+    display: block;
+    color: $neutralGrayishBlue;
+    a {
+      color: $primaryRed;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #app {
+    grid-template-columns: 1fr;
+  }
+
+  .introduction {
+    text-align: center;
+  }
+
+  .registration {
+    margin-bottom: 2rem;
+  }
+}
