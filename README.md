@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
-- [Live Site URL](https://your-live-site-url.com)
+- [Solution URL](https://github.com/NerijusNoreika/intro-component-with-signup-form-master)
+- [Live Site URL](https://nerijusnoreika.github.io/intro-component-with-signup-form-master/)
 
 ## My process
 
